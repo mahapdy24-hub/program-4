@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Basic Animation</title>
+
+<style>
+
+#box
+{
+    width: 80px;
+    height: 80px;
+    background-color: blue;
+    position: relative;
+}
+
+</style>
+
+<script>
+
+function startAnimation()
+{
+    var box = document.getElementById("box");
+
+    var position = 0;
+
+    var timer = setInterval(function()
+    {
+        position = position + 5;
+
+        box.style.left = position + "px";
+
+        if(position >= 300)
+        {
+            clearInterval(timer);
+        }
+
+    }, 50);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Basic Animation</h2>
+
+<div id="box"></div>
+
+<br>
+
+<input type="button"
+       value="Start Animation"
+       onclick="startAnimation()">
+
+</body>
+</html>
